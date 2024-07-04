@@ -1,0 +1,37 @@
+{% load static %}
+{% load homeshop_tags %}
+
+
+
+<section class="section" id="social">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Social Media</h2>
+                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row images">
+        {% get_sosial_mediya as sosial_med%}
+            {% for media in sosial_med %}
+                <div class="col-2">
+                    <div class="thumb">
+                        <div class="icon">
+                            <a href="{{ media.url_inst }}">
+                                <h6>{{ media.name }}</h6>
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <img src="{{ media.sosial_image.url }}" alt="">
+                    </div>
+                </div>
+
+            {% endfor %}
+         
+        </div>
+    </div>
+</section>

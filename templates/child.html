@@ -1,0 +1,55 @@
+{% load static %}
+
+
+<section class="section" id="kids">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Kid's Latest</h2>
+                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="kid-item-carousel">
+                    <div class="owl-kid-item owl-carousel">
+                        {% for category_child_post in category_child %}
+
+                            <div class="item">
+                                <div class="thumb">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="{{ category_child_post.get_absolute_url }}"><i
+                                                    class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <img src="{{ category_child_post.product_image.url }}" alt="">
+                                </div>
+                                <div class="down-content">
+                                    <h4>{{ category_child_post.title }}</h4>
+                                    <span>${{ category_child_post.price }}</span>
+                                    <ul class="stars">
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

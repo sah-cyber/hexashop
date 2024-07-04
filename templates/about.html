@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block about %}
+
+
+
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading about-page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>About Our Company</h2>
+                        <span>Awesome, clean &amp; creative HTML5 Template</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% for about_list in about %}
+        <section class="section" id="explore">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="left-content">
+                            <h2>{{ about_list.name }}</h2>
+                            <div class="quote">
+                                <i class="fa fa-quote-left"></i>
+                                <p>{{ about_list.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right-content">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="first-image">
+                                        <img src="{{ about_list.image.url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+    <!-- ***** Explore Area Ends ***** -->
+
+{% endblock about %}
+    
+   
+  
+
+   
